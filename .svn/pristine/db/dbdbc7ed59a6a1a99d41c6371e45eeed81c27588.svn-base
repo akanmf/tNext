@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F68015E-F5FA-41D8-80FD-5307FBA11E34}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tNext.Common.Proxy</RootNamespace>
+    <AssemblyName>tNext.Common.Proxy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="Connected Services\TeknosaServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TeknosaMobileServiceProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ActiveProductListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddCommentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddressDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddressItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddressListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddShoppingBasketChequeItem2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddShoppingBasketChequeItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AddShoppingBasketLineItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AdvertisementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AgreementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.AvailablePaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.BaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.BasketItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.BasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.BKMPaymentResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CampaignDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CampaignListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CheckoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.Checkout_Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CheckUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ClearUserBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CompareBasket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ContentWithTitleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CreditCardInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.CustomerServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.DeleteUserAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.DistrictResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.FingerprintLoginKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.FingerprintLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.FingerprintRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ForgetPasswordStep1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ForgetPasswordStep2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetActiveProductListingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAdditionalGuaranteeTooltipMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAddressDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAddressListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAddressListWithDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAdvertisementsByTypeForBannerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAdvertisementsByTypeForBannerWithAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAgreementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAllStoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetAvailablePaymentOptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetBKMResultResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCampaignDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCargoTooltipMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCatalogsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCatalogsWithCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCategoriesOfCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCCInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCommentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCompareBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCountyListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCreditCardInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetCurrentProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetFilteredProductsByCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetFilteredProductsByCategoryWithProductZoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetForce3DResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetForceThreeDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetMailDomainsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetMainPageTabCodesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetMaintenanceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetMobileThreeDSecurePaymentReturnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetNearestNStoreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetOrderTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetPaymentMethodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetPhoneAreaCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductBarcodeSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductBasicDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductCommentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductDetailListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductFeaturesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductInServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductInstallmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductSearchNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductsInServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductsOutServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductStoreProvincesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductStoresByProvincesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductStoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductStoresWithPagingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductTextsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProductVideosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetProvinceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetRedTagCatalogAndCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetRedTagProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetRelatedProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetRelatedProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetRequesterIpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetSpecialDiscountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoreDistrictsByProvincesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoreNeighborhoodsByProvinceAndDistrictResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoreProvincesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoresByFilterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoresByProvinceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoresByRangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetStoresListForProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetTeknosaCardPointResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetTeknosaCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetTextsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetThreatMetrixSetupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetTownListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetTransferBankAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUsableUserTokensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserBasicInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserBasketCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserBasketReloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserOrderDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserOrdersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserTeknosaCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetUserTokensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetVideosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.GetWithThisProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InitializeBKMPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InitializeBKMResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InitiliazeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InsertDeviceInformationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InsertorUpdateUserAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.InstallmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.LoadShippingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.LogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.MainPageTabResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.MaintenanceStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.NeighborhoodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.NotifyMeServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.OrderContractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.OrderDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.OrderListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.OrderTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PairResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PaymentMethodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PaymentTransactionQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PaypalProcessPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PrepareContractForBasketByPaymentMethodCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PrepareContractForBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.PrepareContractsForBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProcessPaypalPaymentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductBasicInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductCompareResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductFeaturesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductInServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProductSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ProvinceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RedTagFilterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RedTagProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RegistrationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RemoveAdditionalGuaranteeProductsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RemoveShoppingBasketChequeItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.RemoveShoppingBasketLineItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SearchListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SelectAdditionalGuaranteeProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SendUserActivationCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SetAddressCcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SetAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SetPaymentMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SetShippingBasketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ShippingMethodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.SpecialDiscountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.StoreListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.StoreListWithPagingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.StoreListWithProvinceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.StoresListForCCProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.StringResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.ThreatMetrixSetupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.TokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.TransferBanksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UpdateCreditCardInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UpdateProductInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UpdateShoppingBasketLineItemCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UsableUserTokensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserActivationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserBasketReloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserCardRegisterorMergeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserRegistrationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserUpdate2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.UserUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.WinGiftChequeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\tNext.Common.Proxy.TeknosaServiceReference1.WithThisProductResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TeknosaServiceReference1\webServiceStructure.wsdl" />
+    <None Include="packages.config" />
+    <Compile Include="TeknosaMobileService.ProxyPartial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\TeknosaServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TeknosaServiceReference1\webServiceStructure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TeknosaServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TeknosaServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\TeknosaServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

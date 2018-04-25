@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Style.css">
+    <script src="jquery-3.2.1.js"></script>
+    <meta http-equiv="refresh" content="20">
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: '/tNext.Microservices.Health/Health',
+                method: 'GET',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    var jqueryjson = $(data);
+                    var x = data;
+                    var result1 = "<table border=0 cellpadding=0 cellspacing=0>";
+                    var result2 = "<table border=0 cellpadding=0 cellspacing=0>";
+
+                    var img_ok = document.createElement('img');
+                    var img_nok = document.createElement('img');
+                    img_ok.src = "OK.png";
+                    img_nok.src = "NOK.png";
+                    var value;
+
+                    for (i = 0; i < data.data.allHealthData.length; i++) {
+                        for (j = 0; j < data.data.allHealthData[i].List.length; j++) {
+                            result1 += "<tr>";
+                            if (j == 0) {
+                                result1 += "<td rowspan =" + data.data.allHealthData[i].List.length + ">" + data.data.allHealthData[i].Key.slice(20, (data.data.allHealthData[i].Key.length - 4)).toUpperCase() + "</td>";
+                            }
+                            for (k = 0; k < HealthResponse.length; k++) {
+                                value = data.data.allHealthData[i].List[j][HealthResponse[k]];
+                                if (value == "OK") {
+                                    value = img_ok.outerHTML;
+                                }
+                                else if (value == "NOK") {
+                                    value = img_nok.outerHTML;
+                                }
+                                result1 += "<td>" + value + "</td>";
+                            }
+                            result1 += "</tr>";
+                        }
+                    }
+                    for (i = 0; i < data.data.AllServiceFail.length; i++) {
+                        result2 += "<tr><td>" + data.data.AllServiceFail[i].List.HealthUrl + "</td>";
+                        result2 += "<td>" + data.data.AllServiceFail[i].List.Message + "</td></tr>";
+                    }
+
+                    result1 += "</table > ";
+                    result2 += "</table > ";
+                    var output1 = document.getElementById('output1');
+                    output1.innerHTML = result1;
+                    var output2 = document.getElementById('output2');
+                    output2.innerHTML = result2;
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        var HealthResponse = ["Name", "Status", "Message", "ImportanceLevel"];
+    </script>
+    <section>
+
+        <h1>HEALTH BOARD</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Microservice Name</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Message</th>
+                        <th>ImportanceLevel</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content" id="output1"> </div>
+
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0" height="200">
+                <thead>
+                    <tr>
+                        <th>HealthUrl</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content" id="output2"> </div>
+
+    </section>
+</body>
+</html>
