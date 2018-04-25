@@ -47,6 +47,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{86
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tNext.Microservices.Customer.Api", "Microservices\Customer\tNext.Microservices.Customer.Api\tNext.Microservices.Customer.Api.csproj", "{AC7B7308-E2F0-43A0-928B-BA3E4A039F4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89E83771-05EA-4E3B-8AEE-3B16647E297A}"
+	ProjectSection(SolutionItems) = preProject
+		InitializeSQLScripts.sql = InitializeSQLScripts.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,7 +126,7 @@ Global
 		{AC7B7308-E2F0-43A0-928B-BA3E4A039F4E} = {86C94C63-1F83-4B19-9A8F-70394846FA19}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5F3705A4-95F6-44FE-A0DC-3C4FD04398C7}
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.SqlCe.6.0.1304.0\lib\NET45
+		SolutionGuid = {5F3705A4-95F6-44FE-A0DC-3C4FD04398C7}
 	EndGlobalSection
 EndGlobal
